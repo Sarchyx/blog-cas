@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #18181c;
+}
+
+main {
+    display: flex;
+    padding: 2em;
+    color: white;
+    font-size: 24px; /* Aumenta el tamaño del texto */
+}
+/* Estilos para el encabezado */
+header {
+    position: absolute center; /* Permitir posicionamiento relativo */
+}
+
+/* Estilos para el contenedor del título */
+.encabezado-contenedor {
+    background-image: url('https://static.invenglobal.com/upload/image/2020/08/13/o1597361719998783.jpeg'); /* Reemplazar con tu imagen */
+    background-size: cover;
+    background-position: bottom;
+    /*font-style: oblique; */
+    color: #fff;
+    -webkit-text-stroke: 2px black;
+    text-align: center;
+    padding: 5em 0;
+    height: 50vh; /* Ajusta esta altura según sea necesario */
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semi-transparente */
+    padding: 0.5em 2em;
+    border-radius: 5px; /* Bordes redondeados */
+    color: #fff; /* Color del texto */
+    margin: 0 auto; /* Centra el elemento */
+}
+
+.CAS_Logo {
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boton_descarga {
+    vertical-align: middle; margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.texto_inicio {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    max-width: 1000px;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: inherit
+}
+
+/* Estilos para la barra de navegación */
+nav.barra-navegacion {
+    background-color: rgba(0, 0, 0); /* Fondo semi-transparente */
+    padding: 1em 0;
+    position: relative; /* Posicionamiento absoluto */
+    bottom: 0; /* Al fondo del encabezado */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Centrar los botones */
+}
+
+/* Estilos específicos para los botones de navegación */
+nav.barra-navegacion button {
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 5px; /* Espacio entre botones */
+}
+
+nav.barra-navegacion button:hover {
+    border-bottom: 1px solid #fff; /* Añade una línea debajo */
+}
+
+footer {
+    background-color: rgba(0, 0, 0); /* Fondo semi-transparente */
+    color: #fff;
+    padding: 1em 0;
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: -1; /* Al fondo del encabezado */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Centrar los botones */
+}
