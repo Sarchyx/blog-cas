@@ -117,7 +117,7 @@ footer {
 }
 
 /* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
+@media (max-width: 1263px) {
     main {
         padding: 1em;
         font-size: 20px; /* Reduce el tamaño del texto */
@@ -164,7 +164,7 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 716px) {
     main {
         padding: 0.5em;
         font-size: 18px;
@@ -212,5 +212,11 @@ footer {
 
     footer {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 471px) {
+    .GLP_Logo, .IB_Logo {
+        display: none;
     }
 }
