@@ -20,7 +20,7 @@ header {
 
 /* Estilos para el contenedor del título */
 .titulo {
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
     padding: 0.5em 2em;
     border-radius: 5px; /* Bordes redondeados */
     color: #fff; /* Color del texto */
@@ -34,7 +34,7 @@ header {
     color: #fff;
     text-align: center;
     padding: 5em 0;
-    height: 50vh; /* Ajusta esta altura según sea necesario */
+    height: 50vh;
     font-size: 30px;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@ header {
 }
 
 .GLP_Logo {
-    width: 150px; /* El doble del ancho estándar */
+    width: 150px;
     position: absolute; /* Posicionamiento absoluto */
     top: 50%; /* Centrado verticalmente */
     left: 0; /* Alineado completamente a la izquierda */
@@ -50,7 +50,7 @@ header {
 }
 
 .IB_Logo {
-    width: 300px; /* El doble del ancho estándar */
+    width: 300px;
     position: absolute; /* Posicionamiento absoluto */
     top: 50%; /* Centrado verticalmente */
     left: 160px; /* Alineado completamente a la izquierda */
@@ -161,6 +161,10 @@ footer {
     nav.barra-navegacion button {
         padding: 0.5em;
         font-size: 0.9em;
+    }
+
+    nav.barra-navegacion button:hover {
+        border-bottom: none;
     }
 }
 
