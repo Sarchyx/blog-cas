@@ -2,14 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #18181c;
+    background-color: white;
 }
 
 main {
     display: flex;
     flex-direction: column;
     padding: 2em;
-    color: white;
+    color: black;
     font-size: 24px; /* Aumenta el tamaño del texto */
 }
 
@@ -19,12 +19,19 @@ header {
 }
 
 /* Estilos para el contenedor del título */
+.titulo {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semi-transparente */
+    padding: 0.5em 2em;
+    border-radius: 5px; /* Bordes redondeados */
+    color: #fff; /* Color del texto */
+    margin: 0 auto; /* Centra el elemento */
+}
+
 .encabezado-contenedor {
     background-image: url('https://static.invenglobal.com/upload/image/2020/08/13/o1597361719998783.jpeg'); /* Reemplazar con tu imagen */
     background-size: cover;
     background-position: bottom;
     color: #fff;
-    -webkit-text-stroke: 2px black;
     text-align: center;
     padding: 5em 0;
     height: 50vh; /* Ajusta esta altura según sea necesario */
@@ -34,12 +41,20 @@ header {
     justify-content: center;
 }
 
-.titulo {
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semi-transparente */
-    padding: 0.5em 2em;
-    border-radius: 5px; /* Bordes redondeados */
-    color: #fff; /* Color del texto */
-    margin: 0 auto; /* Centra el elemento */
+.GLP_Logo {
+    width: 150px; /* El doble del ancho estándar */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 50%; /* Centrado verticalmente */
+    left: 0; /* Alineado completamente a la izquierda */
+    transform: translateY(-50%); /* Desplazamiento vertical para centrar exactamente */
+}
+
+.IB_Logo {
+    width: 300px; /* El doble del ancho estándar */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 50%; /* Centrado verticalmente */
+    left: 160px; /* Alineado completamente a la izquierda */
+    transform: translateY(-50%); /* Desplazamiento vertical para centrar exactamente */
 }
 
 .CAS_Logo {
@@ -50,21 +65,14 @@ header {
     margin-right: auto;
 }
 
-.IB_Logo {
-    height: 50px;
-    position: absolute; 
-    right: 10px; 
-    top: 10px;
-}
-
-.texto_inicio {
+.texto_main {
     margin: 0;
     padding: 1em;
     text-align: justify;
     max-width: 1000px;
 }
 
-.imagen_inicio {
+.imagen_main {
     width: 50%;
     height: auto;
     max-width: 50%;
@@ -77,18 +85,17 @@ header {
 
 /* Estilos para la barra de navegación */
 nav.barra-navegacion {
-    background-color: rgba(0, 0, 0); /* Fondo semi-transparente */
-    padding: 1em 0;
+    background-color: white; /* Fondo semi-transparente */
+    padding: 2.5em 0;
     position: relative; /* Posicionamiento absoluto */
-    bottom: 0; /* Al fondo del encabezado */
     width: 100%; /* Ancho completo */
     text-align: center; /* Centrar los botones */
 }
 
 /* Estilos específicos para los botones de navegación */
 nav.barra-navegacion button {
-    background-color: rgba(0, 0, 0, 1);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: black;
     border: none;
     padding: 0.5em 1em;
     cursor: pointer;
@@ -97,12 +104,12 @@ nav.barra-navegacion button {
 }
 
 nav.barra-navegacion button:hover {
-    border-bottom: 1px solid #fff; /* Añade una línea debajo */
+    border-bottom: 1px solid black; /* Añade una línea debajo */
 }
 
 footer {
-    background-color: rgba(0, 0, 0); /* Fondo semi-transparente */
-    color: #fff;
+    background-color: black; /* Fondo semi-transparente */
+    color: white;
     padding: 1em 0;
     position: relative; /* Posicionamiento absoluto */
     bottom: 0; /* Al fondo del encabezado */
@@ -134,15 +141,22 @@ footer {
         max-width: 300px;
     }
 
-    .IB_Logo {
-        height: 50px; /* Reducir el tamaño */
-        right: 1px; /* Ajustar la posición a la derecha */
-        top: 5px; /* Ajustar la posición superior */
-    }
-
-    .texto_inicio {
+    .texto_main {
         padding: 0.5em;
         font-size: 18px;
+    }
+
+    .imagen_main {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .GLP_Logo, .IB_Logo {
+        width: 100px; /* Ajuste para tabletas */
+    }
+
+    .IB_Logo {
+        left: 110px;
     }
 
     nav.barra-navegacion button {
@@ -173,9 +187,23 @@ footer {
         height: auto;
         max-width: 250px;
     }
-    .texto_inicio {
+
+    .texto_main {
         padding: 0.5em;
         font-size: 16px;
+    }
+
+    .imagen_main {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .GLP_Logo, .IB_Logo {
+        width: 50px; /* Ajuste para móviles */
+    }
+
+    .IB_Logo {
+        left: 50px
     }
 
     nav.barra-navegacion button {
