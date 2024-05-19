@@ -67,7 +67,6 @@ header {
 
 .texto_main {
     margin: 0;
-    padding: 1em;
     text-align: justify;
     max-width: 1000px;
 }
@@ -152,7 +151,7 @@ footer {
     }
 
     .GLP_Logo, .IB_Logo {
-        width: 100px; /* Ajuste para tabletas */
+        width: 100px;
     }
 
     .IB_Logo {
@@ -199,7 +198,7 @@ footer {
     }
 
     .GLP_Logo, .IB_Logo {
-        width: 50px; /* Ajuste para móviles */
+        width: 50px;
     }
 
     .IB_Logo {
