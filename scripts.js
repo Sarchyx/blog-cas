@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    console.log("Samantha está re buena...")
+    console.log("¿Por qué eri tan pro Aristi?")
+
     // Activa el botón cuando se hace clic
     navButtons.forEach((button, index) => {
         button.addEventListener('click', function(event) {
