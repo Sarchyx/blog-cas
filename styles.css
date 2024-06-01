@@ -1,15 +1,21 @@
+:root {
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: var(--second-bg-color)
 }
 
 main {
     display: flex;
     flex-direction: column;
     padding: 2em;
-    color: black;
+    color: var(--text-color);
     font-size: 24px; /* Aumenta el tamaño del texto */
 }
 
@@ -20,11 +26,17 @@ header {
 
 /* Estilos para el contenedor del título */
 .titulo {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
+    background-color: var(--bg-color); /* Fondo negro semi-transparente */
     padding: 0.5em 2em;
     border-radius: 5px; /* Bordes redondeados */
     color: #fff; /* Color del texto */
     margin: 0 auto; /* Centra el elemento */
+    box-shadow: 0 0 35px 10px var(--bg-color);
+    transition: .3s ease;
+}
+
+.titulo:hover {
+    transform: scale(1.1)
 }
 
 .encabezado-contenedor {
@@ -41,20 +53,12 @@ header {
     justify-content: center;
 }
 
-.GLP_Logo {
-    width: 150px;
-    position: absolute; /* Posicionamiento absoluto */
-    top: 50%; /* Centrado verticalmente */
-    left: 0; /* Alineado completamente a la izquierda */
-    transform: translateY(-50%); /* Desplazamiento vertical para centrar exactamente */
-}
-
 .IB_Logo {
     width: 300px;
-    position: absolute; /* Posicionamiento absoluto */
-    top: 50%; /* Centrado verticalmente */
-    left: 160px; /* Alineado completamente a la izquierda */
-    transform: translateY(-50%); /* Desplazamiento vertical para centrar exactamente */
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
 }
 
 .CAS_Logo {
@@ -63,6 +67,11 @@ header {
     height: auto;
     margin-left: auto;
     margin-right: auto;
+    transition: .3s ease;
+}
+
+.CAS_Logo:hover {
+    transform: scale(1.1);
 }
 
 .texto_main {
@@ -82,38 +91,50 @@ header {
     color: inherit
 }
 
-/* Estilos para la barra de navegación */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
 nav.barra-navegacion {
-    background-color: white; /* Fondo semi-transparente */
+    background-color: var(--bg-color);
     padding: 2.5em 0;
-    position: relative; /* Posicionamiento absoluto */
-    width: 100%; /* Ancho completo */
-    text-align: center; /* Centrar los botones */
+    position: relative;
+    width: 100%;
+    text-align: center;
 }
 
-/* Estilos específicos para los botones de navegación */
 nav.barra-navegacion button {
-    background-color: rgb(255, 255, 255);
-    color: black;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     border: none;
-    padding: 0.5em 1em;
+    padding: 0.5em 1em 0.2em 1em;
     cursor: pointer;
+    font-weight: 600;
     font-size: 1em;
-    margin: 0 5px; /* Espacio entre botones */
+    margin-left: 0 5px;
+    border-bottom: 3px solid transparent;
+    transition: .5s ease;
 }
 
-nav.barra-navegacion button:hover {
-    border-bottom: 1px solid black; /* Añade una línea debajo */
+nav.barra-navegacion button:hover,
+nav.barra-navegacion button.active {
+    color: cyan;
+    border-bottom: 3px solid cyan;
 }
 
 footer {
-    background-color: black; /* Fondo semi-transparente */
+    background-color: #080808;
     color: white;
-    padding: 1em 0;
-    position: relative; /* Posicionamiento absoluto */
-    bottom: 0; /* Al fondo del encabezado */
-    width: 100%; /* Ancho completo */
-    text-align: center; /* Centrar los botones */
+    padding: 0.5em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 /* Media Queries para dispositivos móviles */

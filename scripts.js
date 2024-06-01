@@ -1,21 +1,32 @@
-// Agrega este código al final de tu scripts.js
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtén todos los botones de navegación
-    var navButtons = document.querySelectorAll('nav a');
+    const navButtons = document.querySelectorAll('nav.barra-navegacion button');
 
-    // Itera sobre cada botón de navegación
-    navButtons.forEach(function(button) {
-        // Agrega un evento de clic a cada botón
+    navButtons.forEach((button, index) => {
         button.addEventListener('click', function(event) {
-            // Evita que el enlace predeterminado se active
             event.preventDefault();
-            
-            // Obtén la URL de la página correspondiente al botón
-            var pageUrl = button.getAttribute('href');
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            localStorage.setItem('activeNavIndex', index);  // Guarda el índice del botón activo
 
-            // Redirige a la página correspondiente
-            window.location.href = pageUrl;
+            let pageUrl = button.querySelector('a').getAttribute('page');
+            window.location.href = pageUrl;  // Redirige a la página
         });
+    });
+
+    // Restaura el estado activo al cargar la página
+    const activeIndex = localStorage.getItem('activeNavIndex');
+    if (activeIndex !== null) {
+        navButtons[activeIndex].classList.add('active');
+    }
+
+    window.addEventListener('scroll', function() {
+        const textContent = document.querySelector('.texto_main');
+        const imageContent = document.querySelector('.imagen_main');
+        const triggerHeight = window.innerHeight / 4; // Ajusta esto según necesites
+
+        if (window.scrollY > triggerHeight) {
+            textContent.classList.add('fade-in');
+            imageContent.classList.add('fade-in');
+        }
     });
 });
