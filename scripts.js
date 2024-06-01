@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('scroll', function() {
+        const textContent = document.querySelector('.texto_main');
+        const triggerHeight = window.innerHeight / 4;
+
+        if (window.scrollY > triggerHeight) {
+            textContent.classList.add('fade-in');
+        }
+    });
+
     const navButtons = document.querySelectorAll('nav.barra-navegacion button');
 
     // Función para activar el botón basado en la URL actual
@@ -16,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    console.log("Samantha está re buena...")
-    console.log("¿Por qué eri tan pro Aristi?")
+    console.log("Samantha está re buena 😻")
+    console.log("¿Por qué eres tan pro Aristi?")
+    console.log("Espero que los del IB no lean esto...")
 
     // Activa el botón cuando se hace clic
     navButtons.forEach((button) => {
