@@ -1,32 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navButtons = document.querySelectorAll('nav.barra-navegacion button');
 
+    // Función para activar el botón basado en la URL actual
+    function activateButtonBasedOnUrl() {
+        const currentPage = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual de la URL
+
+        navButtons.forEach((button, index) => {
+            const pageUrl = button.querySelector('a').getAttribute('page');
+            if (pageUrl === currentPage) {
+                button.classList.add('active');
+                sessionStorage.setItem('activeNavIndex', index); // Guarda el índice del botón activo
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+
+    // Activa el botón cuando se hace clic
     navButtons.forEach((button, index) => {
         button.addEventListener('click', function(event) {
             event.preventDefault();
-            navButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            localStorage.setItem('activeNavIndex', index);  // Guarda el índice del botón activo
-
-            let pageUrl = button.querySelector('a').getAttribute('page');
-            window.location.href = pageUrl;  // Redirige a la página
+            window.location.href = button.querySelector('a').getAttribute('page'); // Redirige a la página
         });
     });
 
-    // Restaura el estado activo al cargar la página
-    const activeIndex = localStorage.getItem('activeNavIndex');
-    if (activeIndex !== null) {
-        navButtons[activeIndex].classList.add('active');
-    }
-
-    window.addEventListener('scroll', function() {
-        const textContent = document.querySelector('.texto_main');
-        const imageContent = document.querySelector('.imagen_main');
-        const triggerHeight = window.innerHeight / 4; // Ajusta esto según necesites
-
-        if (window.scrollY > triggerHeight) {
-            textContent.classList.add('fade-in');
-            imageContent.classList.add('fade-in');
-        }
-    });
+    // Activa el botón basado en la URL al cargar la página
+    activateButtonBasedOnUrl();
 });
